@@ -1,0 +1,28 @@
+.imgprew {
+  height: 700px;
+  align-items: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+}
+.addform{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 1050px;
+  background-color: rgb(255, 255, 255);
+  margin: auto;
+}
+.addpost {
+  margin-top: 20px;
+}
+.input {
+  background-color: gainsboro;
+  border: none;
+  width: 300px;
+}
+.textarea{ 
+  background-color: gainsboro;
+  border: none;
+}

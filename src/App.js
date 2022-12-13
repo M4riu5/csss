@@ -1,24 +1,40 @@
-import logo from './logo.svg';
-import './App.css';
+import {Routes, Route, BrowserRouter} from 'react-router-dom'
+import MainPage from './pages/MainPage'
+import PostPage from './pages/PostPage'
+import PotstsPage from './pages/PostsPage'
+import LoginPage from './pages/LoginPage'
+import RegisterPage from './pages/RegisterPage'
+import EditPostPage from './pages/EditPostPage'
+import AddPostPage from './pages/AddPostPage'
+import NavBar from './components/Navbar'
+import { ToastContainer } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
+import { useDispatch } from 'react-redux'
+import { useEffect } from 'react'
+import { getMe } from './redux/features/authSlice'
 
 function App() {
+  const dispatch = useDispatch()
+  // keikviena page tikrins ar yra pas useri tokenas
+  useEffect(()=> {
+    dispatch(getMe())
+  },[dispatch])
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+    <BrowserRouter>
+        <NavBar/>
+      <Routes>
+        <Route path='/' element={<MainPage/>}/>
+        <Route path='/posts' element={<PotstsPage/>}/>
+        <Route path='/:id' element={<PostPage/>}/>
+        <Route path='/new' element={<AddPostPage/>}/>
+        <Route path='/:id/edit' element={<EditPostPage/>}/>
+        <Route path='/register' element={<RegisterPage/>}/>
+        <Route path='/login' element={<LoginPage/>}/>
+      </Routes>
+      <ToastContainer position='bottom-right'/>
+    </BrowserRouter>
+    </>
   );
 }
 

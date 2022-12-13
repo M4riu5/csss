@@ -1,0 +1,38 @@
+
+.editpage form {
+  margin-top: 20px;
+display: flex;
+flex-direction: column;
+align-items: center;
+}
+.editpage textarea {
+ background-color: gainsboro;
+ border: none;
+}
+.editpage input {
+  background-color: gainsboro;
+  border: none;
+  width: 300px;
+}
+.imageedit {
+  margin-top: 30px;
+  align-items: center;
+  height: 600px;
+  align-items: center;
+}
+.editpage{ 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.updatebtn {
+  margin-top: 20px;
+  width: 200px;
+  margin-bottom: 50px;
+  color: white;
+  background-color: black;
+  border: none;
+  border-radius: 10px;
+  height: 30px;
+}
